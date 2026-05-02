@@ -16,33 +16,6 @@ class PortfolioController extends Controller
         return view('home', compact('projects', 'skills'));
     }
 
-    public function send(Request $request)
-    {
-        $request->validate([
-            'name'    => 'required|string|max:255',
-            'email'   => 'required|email',
-            'subject' => 'nullable|string|max:255',
-            'message' => 'required|string',
-        ]);
-
-        $toEmail = config('portfolio.email') ?: config('mail.from.address');
-
-        if (!$toEmail) {
-            return back()->with('success', 'Message received! I\'ll be in touch soon.');
-        }
-
-        Mail::raw(
-            "Name: {$request->name}\nEmail: {$request->email}\n\n{$request->message}",
-            function ($mail) use ($request, $toEmail) {
-                $mail->to($toEmail)
-                    ->subject($request->subject ?: 'New Contact Form Message')
-                    ->replyTo($request->email, $request->name);
-            }
-        );
-
-        return back()->with('success', 'Message sent! I\'ll get back to you within 24 hours.');
-    }
-
     /* ---------------------------------------------------------------
      * Data helpers — replace with DB queries or a CMS as needed
      * ------------------------------------------------------------- */

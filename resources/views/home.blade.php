@@ -5,5 +5,4 @@
     @include('sections.about')
     @include('sections.work')
     @include('sections.skills')
-    @include('sections.contact')
 @endsection
