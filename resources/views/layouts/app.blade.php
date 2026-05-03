@@ -10,9 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/portfolio.css') }}">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<script src="{{ asset('js/app.js') }}"></script>
-
+    <script src="{{ asset('js/portfolio.js') }}"></script>
 </head>
 <body>
 
@@ -48,6 +46,6 @@
     </footer>
 
     <!-- <script src="{{ asset('js/app.js') }}"></script> -->
-    <script src="{{ asset('js/portfolio.js') }}"></script>
+    
 </body>
 </html>
